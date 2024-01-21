@@ -1,16 +1,21 @@
 .active {
-  background-color: #cdc49c;
+  color: #040404;
 }
 
 nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  background-color: #ffeaa7;
   color: white;
-  position: sticky;
-  top: 0;
+  z-index: 2000;
+  width: 100%;
+  position: fixed;
+  flex-direction: column;
+  min-height: 4rem;
 }
+
+
 
 nav .title {
   font-size: 1.5rem;
@@ -31,10 +36,10 @@ nav ul li {
 nav ul li a {
   display: block;
   text-decoration: none;
-  color: #040404;
+  color: #636e72;
   padding: 0.5rem;
   font-family: 'Roboto', sans-serif;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 1.2rem;
   margin: 0.5rem;
   border-radius: 0.5rem;
@@ -62,7 +67,7 @@ nav .menu span {
 }
 
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   nav .menu {
     display: flex;
   }

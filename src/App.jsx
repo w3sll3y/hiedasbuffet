@@ -1,22 +1,22 @@
-import { Header } from "./components/Header/Header.jsx"
 
 import * as Styled from './App.module.ts';
-import { Jumbotron } from './components/Jumbotron/Jumbotron.tsx'
 
+import Home from '../src/pages/home/index.tsx';
+import Destaques from '../src/pages/destaques/index.tsx'
+import Produtos from '../src/pages/produtos/index.tsx'
 import './global.css'
 import { Route, Routes } from "react-router-dom";
-import { Menu } from "./components/Header/components/Menu/Menu.tsx";
 
 function App() {
 
   return (
     <Styled.Container>
-      <Header />
-      <Menu />
       <Routes>
-        <Route path="/about" element={<App />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/destaques" element={<Destaques />} />
+        <Route path="/produtos" element={<Produtos />} />
+        <Route path="/contact" element={<Home />} />
       </Routes>
-      <Jumbotron />
     </Styled.Container>
   )
 }

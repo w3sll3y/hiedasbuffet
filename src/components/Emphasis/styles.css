@@ -1,0 +1,18 @@
+.indicator {
+  cursor: pointer;
+  margin-top: -55px;
+  padding: 5px;
+  max-height: 5px;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  text-align: center;
+  border: 1px #cdc49c solid;
+  border-radius: 50%;
+  margin-left: 0.5rem;
+}
+
+.indicator.active {
+  color: #fff;
+  background: #cdc49c;
+}

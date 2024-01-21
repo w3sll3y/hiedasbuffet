@@ -6,6 +6,3 @@ export const Container = styled.div`
   position: relative;
   flex-direction: column;
 `
-
-
-

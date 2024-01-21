@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Jumbotron = styled.section`
-  margin: 2rem 20rem;
+  margin: 2rem 20rem 0;
   border-bottom-width: 1;
   display: flex;
   flex-direction: row;
