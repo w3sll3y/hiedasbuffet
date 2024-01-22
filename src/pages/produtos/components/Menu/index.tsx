@@ -6,10 +6,7 @@ export default function MenuProdutos() {
     "A MINHA FESTA",
     "ALMOFADA",
     "BOLEIRA",
-    "CADEIRAS / POLTRONAS / SOFÁS / PUFF'S / BANCOS",
     "CARRINHO",
-    "CASTIÇAIS",
-    "ESPELHOS",
     "KIT MONTE FÁCIL",
     "LUMINÁRIAS/LUMINOSOS",
     "MÓBILIAS / MÓVEIS",
@@ -20,7 +17,6 @@ export default function MenuProdutos() {
     "SOUSPLAT",
     "TAPETE",
     "TECIDO",
-    "FLORES / ARRANJOS / FOLHAGENS"
   ]
   return (
     <Styled.Container>

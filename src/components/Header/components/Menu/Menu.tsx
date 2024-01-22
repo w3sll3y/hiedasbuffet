@@ -26,16 +26,13 @@ export const Menu = () => {
         <li>
           <NavLink to="/produtos">Nossos produtos</NavLink>
         </li>
-        <li>
-          <NavLink to="/contact">Sobre nos</NavLink>
-        </li>
+        {/* <li>
+          <NavLink to="/sobre">Sobre nos</NavLink>
+        </li> */}
         <li>
           <NavLink to="/checkout">Checkout <ShoppingCart color="#636e72" size={18} /></NavLink>
         </li>
       </ul>
-      {/* <Styled.CartStore onClick={() => console.log("Herree")}>
-        <ShoppingCart color="#040404" size={24} />
-      </Styled.CartStore> */}
     </nav >
   );
 };

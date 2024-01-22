@@ -8,15 +8,13 @@ export const Container = styled.section`
 
 export const ContainerProduct = styled.section`
   display: flex;
-  position: relative;
   max-width: 90%;
-  flex-direction: row;
-  justify-content: space-around;
-  flex: 1;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 `;
 
 export const MenuContainer = styled.div`
-
 `;
 
 export const ProdutosContainer = styled.section`

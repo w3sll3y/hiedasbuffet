@@ -10,7 +10,7 @@ export const Container = styled.section`
 `;
 export const ContainerProduct = styled.section`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   @media (max-width: 768px) {
     max-width: 80rem;
     max-height: 50rem;
@@ -28,8 +28,8 @@ export const ImageContainer = styled.section`
   overflow: hidden;
   border-radius: 5px;
   padding-bottom: 1rem;
-  max-width: 285px; 
-  min-width: 285px; 
+  max-width: 350px; 
+  min-width: 350px; 
   max-height: 410px;
   min-height: 410px;
   margin: 2rem 3rem 1rem 0;

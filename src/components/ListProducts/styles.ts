@@ -81,3 +81,18 @@ object-fit: contain;
     height: 8rem;
   }
 `;
+
+export const ModalContainer = styled.section`
+  width: 70rem;
+  height: 50rem;
+  flex: 1;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 3rem;
+  margin: 0 auto;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;

@@ -1,17 +1,24 @@
 import * as Styled from './styles';
+import Modal from '@mui/material/Modal';
+import ModalItem from '../../../../components/Modal';
 
 import 'keen-slider/keen-slider.min.css';
 import { useEffect, useState } from 'react';
-import { Header } from '../../../../components/Header/Header';
-type Teste = {
-  hasTitle: boolean,
-  title?: string,
-  quantity: number
-}
 
 export default function ListProducts(props) {
 
   const [data, setData] = useState(props?.data)
+  const [dataOnModal, setDataOnModal] = useState([]);
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  async function handleSetDataOnModal(data) {
+    console.log(data)
+    setDataOnModal(data);
+    handleOpen();
+    return
+  }
 
   useEffect(() => {
     setData(props?.data)
@@ -19,9 +26,17 @@ export default function ListProducts(props) {
 
   return (
     <Styled.ContainerProduct >
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <ModalItem data={dataOnModal} />
+      </Modal>
       {
         data.map(item => (
-          <Styled.ImageContainer>
+          <Styled.ImageContainer onClick={() => handleSetDataOnModal(item)}>
             <Styled.ImageProduct src={item?.url} />
             <Styled.FooterProduct>
               <Styled.FooterProductDescription>

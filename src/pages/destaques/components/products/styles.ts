@@ -36,10 +36,10 @@ export const ImageContainer = styled.section`
   justify-content: center;
   position: relative;
   padding-bottom: 1rem;
-  max-width: 285px; 
-  min-width: 285px; 
-  max-height: 410px;
-  min-height: 410px;
+  max-width: 350px; 
+  min-width: 350px; 
+  max-height: 390px;
+  min-height: 390px;
   margin-right: 3rem;
   flex-direction: column;
   align-items: center;
@@ -83,4 +83,19 @@ object-fit: contain;
     width: 8rem;
     height: 8rem;
   }
+`;
+
+export const ModalContainer = styled.section`
+  width: 70rem;
+  height: 50rem;
+  flex: 1;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 3rem;
+  margin: 0 auto;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
