@@ -8,13 +8,18 @@ export const Container = styled.div`
   justify-content: center;
 
   @media (max-width: 768px) {
-    display: none;
+    /* display: none; */
   }
 `;
 
 export const SlideShow = styled.div`
   max-width: 100rem;
   position: relative;
+  @media (max-width: 768px) {
+      margin-top: -50px;
+      max-width: 22rem;
+      max-height: 22rem;
+  }
 `;
 
 export const Indicators = styled.div`

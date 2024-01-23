@@ -6,9 +6,11 @@ export const Jumbotron = styled.section`
   display: flex;
   flex-direction: row;
   border-color: red;
+  justify-content: center;
+  align-items: center;
   @media (max-width: 768px) {
     flex-direction: column;
-    margin: 2rem ;
+    margin: 0 2rem;
   }
 `;
 
@@ -22,10 +24,16 @@ export const ImageToHire = styled.img`
 export const ContainerTextJumbotron = styled.text`
   display: flex;
   margin-top: 4rem;
+  @media (max-width: 768px) {
+  }
 `;
 
 export const TextJumbotron = styled.text`
   max-width: 70%;
+  @media (max-width: 768px) {
+    max-width: 100%;
+    font-size: 10px;
+  }
 `;
 
 

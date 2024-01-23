@@ -42,7 +42,6 @@ export default function ModalItem(props) {
       </Styled.ContainerImg>
       <Styled.ContainerDescription>
         <Styled.ContainerDescriptionTitle>
-          {console.log(data)}
           {data?.name}
         </Styled.ContainerDescriptionTitle>
         {data?.category.map(item => (

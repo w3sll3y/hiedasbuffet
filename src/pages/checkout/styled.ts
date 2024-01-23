@@ -21,3 +21,12 @@ export const Title = styled.text`
   font-size: 1.6rem;
   margin-bottom: 2rem;
 `;
+
+export const ContainerDate = styled.section`
+  display: flex;
+  max-width: 850px;
+  min-width: 850px;
+  flex-direction: row;
+  margin-bottom: 2rem;
+  justify-content: space-between;
+`;

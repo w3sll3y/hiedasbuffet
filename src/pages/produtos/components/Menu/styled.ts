@@ -3,11 +3,15 @@ import styled from "styled-components";
 export const Container = styled.div`
   margin-top: 5rem;
   display: flex;
+  width: 100%;
+  justify-content: center;
   flex-direction: row;
 `;
 
 export const UlProduct = styled.ul`
 list-style-type: none;
+display: flex;
+flex-direction: row;
 `;
 export const LiProduct = styled.li`
   margin-right: 2rem;

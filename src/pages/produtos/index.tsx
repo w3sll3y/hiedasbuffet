@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Footer from '../../components/Footer';
 import { Header } from '../../components/Header/Header';
 import { ListOfProducts } from '../../data/products';
@@ -6,6 +7,11 @@ import MenuProdutos from './components/Menu';
 import * as Styled from './styled';
 
 export default function Produtos() {
+  const [filter, setFilter] = useState('todos')
+
+  async function handleFilter(data: string) {
+    setFilter(data)
+  }
 
   return (
     <>
@@ -13,10 +19,10 @@ export default function Produtos() {
       <Styled.Container>
         <Styled.ContainerProduct>
           <Styled.MenuContainer>
-            <MenuProdutos />
+            <MenuProdutos handleFilter={handleFilter} />
           </Styled.MenuContainer>
           <Styled.ProdutosContainer>
-            <ListProducts data={ListOfProducts} />
+            <ListProducts data={ListOfProducts} filter={filter} />
           </Styled.ProdutosContainer>
         </Styled.ContainerProduct>
       </Styled.Container>

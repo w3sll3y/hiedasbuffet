@@ -12,6 +12,7 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
+import { ToastContainer, toast } from 'react-toastify';
 import { Trash } from 'phosphor-react';
 
 import * as Styled from './styled';
@@ -22,6 +23,8 @@ export default function TableItems(props) {
   const [reHandle, setReHandle] = useState(0);
   const [reHandle2, setReHandle2] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
+
+  const notifyErr = (err) => toast.error(err);
 
   const [open, setOpen] = useState(false);
   const [open2, setOpen2] = useState(false);
@@ -44,6 +47,17 @@ export default function TableItems(props) {
     setOpen2(false);
   };
 
+  function formatarData(data) {
+    const dia = data.getDate();
+    const mes = data.getMonth() + 1;
+    const ano = data.getFullYear() % 100;
+
+    const diaFormatado = dia < 10 ? `0${dia}` : dia;
+    const mesFormatado = mes < 10 ? `0${mes}` : mes;
+    const anoFormatado = ano < 10 ? `0${ano}` : ano;
+
+    return `${diaFormatado}/${mesFormatado}/${anoFormatado}`;
+  }
 
   async function handleClearStorage() {
     localStorage.clear();
@@ -81,12 +95,28 @@ export default function TableItems(props) {
   }
 
   async function handleSendBudget() {
+    console.log(props)
+    const startData = props?.startDate;
+    console.log(startData)
+    const endData = props?.endDate;
+    console.log(endData)
+    const today = formatarData(new Date());
+    console.log(today)
+
+    if (startData < today) {
+      return notifyErr('A data de busca deve ser maior que a de hoje');
+    } else if (startData > endData) {
+      return notifyErr('A data de devolução deve ser maior que a de retirada');
+    }
+
     const dataToSend =
       `Olá, vim pelo _Site_, e gostaria de solicitar o orçamento para reservar os seguintes itens:
-      ${data.map(item => `*Item:* - ${item?.name} - *Quantidade:* ${item?.quantity}`).join('\n')}`
+      ${data.map(item => `*Item:* - ${item?.name} - *Quantidade:* ${item?.quantity}\n`).join('\n')}
+      Com previsão de retirada para: ${startData} e devolção para: ${endData}
+      `
 
     const mensagemCodificada = encodeURIComponent(dataToSend);
-    const url = `https://web.whatsapp.com/send?phone=5585986506832&text=${mensagemCodificada}`;
+    const url = `https://web.whatsapp.com/send?phone=558592521919&text=${mensagemCodificada}`;
     window.open(url, '_blank');
     setOpen2(false)
   }
@@ -212,6 +242,18 @@ export default function TableItems(props) {
           </Styled.SendButton>
         </DialogActions>
       </Dialog>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
     </TableContainer>
   );
 }
