@@ -37,23 +37,21 @@ export default function Checkout() {
     <Styled.Container>
       <Styled.ContainerTable>
         <Styled.Title>
-          {console.log('Start', startDate)}
-          {console.log('end', endDate)}
           Meu carrinho
         </Styled.Title>
         <Styled.ContainerDate>
-          <div>
-            De: <DatePicker
+          <Styled.ContainerDateRow>
+            De: <DatePicker style={{ backgroundColor: 'red' }}
               selected={startDate}
               onChange={(date) => setStartDate(date)}
             />
-          </div>
-          <div>
+          </Styled.ContainerDateRow>
+          <Styled.ContainerDateRow>
             Para: <DatePicker
               selected={endDate}
               onChange={(date) => setEndDate(date)}
             />
-          </div>
+          </Styled.ContainerDateRow>
         </Styled.ContainerDate>
         <TableItems data={data} startDate={formatarData(startDate)} endDate={formatarData(endDate)} />
       </Styled.ContainerTable>

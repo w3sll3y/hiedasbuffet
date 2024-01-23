@@ -68,7 +68,7 @@ export default function TableItems(props) {
 
   async function handleCalcTotalPrice() {
     let total = 0;
-    data.map(item => {
+    data?.map(item => {
       total = (item?.price * item?.quantity) + total;
     })
     setTotalPrice(total);
@@ -76,7 +76,7 @@ export default function TableItems(props) {
 
   const filtrarObjetosUnicos = (array) => {
     const objetosUnicos = {};
-    array.forEach((objeto) => {
+    array?.forEach((objeto) => {
       if (objetosUnicos[objeto.id]) {
         objetosUnicos[objeto.id].quantity += objeto.quantity;
       } else {
@@ -107,12 +107,12 @@ export default function TableItems(props) {
       return notifyErr('A data de busca deve ser maior que a de hoje');
     } else if (startData > endData) {
       return notifyErr('A data de devolução deve ser maior que a de retirada');
+    } else if (data?.length === 0) {
+      return notifyErr('É preciso adicionar produto para pedir o orçamento');
     }
 
     const dataToSend =
-      `Olá, vim pelo _Site_, e gostaria de solicitar o orçamento para reservar os seguintes itens:
-      ${data.map(item => `*Item:* - ${item?.name} - *Quantidade:* ${item?.quantity}\n`).join('\n')}
-      Com previsão de retirada para: ${startData} e devolção para: ${endData}
+      `Olá, vim pelo _Site_, e gostaria de solicitar o orçamento para reservar os seguintes itens: ${data?.map(item => `\n*Item:* ${item?.name} - *Quantidade:* ${item?.quantity}`)}\nCom previsão de retirada para: ${startData} e devolção para: ${endData}
       `
 
     const mensagemCodificada = encodeURIComponent(dataToSend);
@@ -196,7 +196,6 @@ export default function TableItems(props) {
         </TableBody>
       </Table>
       <Dialog
-        fullScreen={fullScreen}
         open={open}
         onClose={handleClose}
         aria-labelledby="responsive-dialog-title"
@@ -220,7 +219,6 @@ export default function TableItems(props) {
       </Dialog>
 
       <Dialog
-        fullScreen={fullScreen}
         open={open2}
         onClose={handleCloseToSend}
         aria-labelledby="responsive-dialog-title"

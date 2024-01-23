@@ -12,8 +12,7 @@ export const ContainerProduct = styled.section`
   grid-template-columns: repeat(4, 1fr);
   max-width: 100rem;
   @media (max-width: 768px) {
-    max-width: 80rem;
-    max-height: 50rem;
+    grid-template-columns: repeat(1, 1fr);
   }
 `;
 
@@ -58,8 +57,8 @@ export const FooterProduct = styled.div`
   justify-content: space-between;
   width: 100%;
   padding: 1rem;
-   @media (max-width: 768px) {
-    padding: .3rem;
+  @media (max-width: 768px) {
+    padding: .8rem;
   }
 `;
 export const FooterProductDescription = styled.div`
@@ -79,9 +78,9 @@ export const FooterProductPrice = styled.div`
 export const ImageProduct = styled.img`
 object-fit: contain;
 @media (max-width: 768px) {
-    object-fit: contain;
-    width: 8rem;
-    height: 8rem;
+    object-fit: cover;
+    width:  100%; 
+    height: 100%;
   }
 `;
 

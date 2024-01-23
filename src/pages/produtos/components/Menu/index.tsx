@@ -54,7 +54,7 @@ export default function MenuProdutos(props) {
   return (
     <Styled.Container>
       <Styled.UlProduct>
-        <Styled.ButtonList style={{ marginRight: '2rem' }} onClick={() => handleFilterChild('todos')}>Todos</Styled.ButtonList>
+        <Styled.ButtonListAll onClick={() => handleFilterChild('todos')}>Todos</Styled.ButtonListAll>
         {categories.map(e => (
           <Styled.LiProduct>
             <Styled.ButtonList onClick={e => handleFilterChild(e.target.innerText)}>{e}</Styled.ButtonList>

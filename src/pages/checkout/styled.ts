@@ -7,6 +7,9 @@ export const Container = styled.section`
   align-items: center;
   flex-direction: column;
   height: 100vh;
+  @media (max-width: 768px) {
+    margin-top: 6rem;
+  }
 `;
 
 export const ContainerTable = styled.section` 
@@ -20,6 +23,9 @@ export const Title = styled.text`
   text-align: center;
   font-size: 1.6rem;
   margin-bottom: 2rem;
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
 `;
 
 export const ContainerDate = styled.section`
@@ -29,4 +35,13 @@ export const ContainerDate = styled.section`
   flex-direction: row;
   margin-bottom: 2rem;
   justify-content: space-between;
+  @media (max-width: 768px) {
+    justify-content: center;
+    flex-direction: column;
+    max-width: 180px;
+    min-width: 180px;
+  }
 `;
+
+export const ContainerDateRow = styled.section``;
+

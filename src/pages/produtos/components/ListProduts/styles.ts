@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const Container = styled.section`
   display: flex;
   justify-content: center;
-  background-color: green;
   max-width: 90%;
   margin-top: 5rem;
   align-items: center;
@@ -12,8 +11,9 @@ export const ContainerProduct = styled.section`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   @media (max-width: 768px) {
-    max-width: 80rem;
-    max-height: 50rem;
+    grid-template-columns: repeat(1, 1fr);
+    max-width: 100%;
+    max-height: 100%;
   }
 `;
 
@@ -37,7 +37,8 @@ export const ImageContainer = styled.section`
   align-items: center;
   display: flex;
   @media (max-width: 768px) {
-    margin-right: 1rem;
+    width: 100%;
+    height: 100%;
   }
 `;
 export const FooterProduct = styled.div`
@@ -52,7 +53,7 @@ export const FooterProduct = styled.div`
   width: 100%;
   padding: 1rem;
    @media (max-width: 768px) {
-    padding: .3rem;
+    padding: .8rem;
   }
 `;
 export const FooterProductDescription = styled.div`
@@ -71,9 +72,9 @@ export const FooterProductPrice = styled.div`
 
 export const ImageProduct = styled.img`
   object-fit: cover;
-@media (max-width: 768px) {
-    object-fit: contain;
-    width: 8rem;
-    height: 8rem;
+  @media (max-width: 768px) {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
   }
 `;
