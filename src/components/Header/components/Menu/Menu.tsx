@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { ShoppingCart } from 'phosphor-react';
 import { Header } from '../../Header.tsx';
 import "./styles.css";
-import * as Styled from '../../HeaderMod.module.ts';
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import Logo from '../../../../assets/hiedaslogo.png';
 
 export const Menu = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -11,6 +11,9 @@ export const Menu = () => {
   return (
     <nav>
       <Header />
+      <div className={menuOpen ? "logo-hiedas-of" : "logo-hiedas"}>
+        <img src={Logo} width={45} height={45} />
+      </div>
       <div className="menu" onClick={() => setMenuOpen(!menuOpen)}>
         <span></span>
         <span></span>

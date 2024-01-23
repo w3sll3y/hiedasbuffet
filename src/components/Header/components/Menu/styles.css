@@ -62,10 +62,17 @@ nav .menu {
 nav .menu span {
   height: 0.4rem;
   width: 100%;
-  background-color: #fff;
+  background-color: #2d3436;
   border-radius: 0.2rem;
 }
 
+.logo-hiedas {
+  display: none;
+}
+
+.logo-hiedas-of {
+  display: none;
+}
 
 @media (max-width: 768px) {
   nav .menu {
@@ -96,4 +103,19 @@ nav .menu span {
   nav ul li a {
     margin: 0.2rem 0.5rem;
   }
+
+  .logo-hiedas {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3000;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #2d3436;
+    border-radius: 5px;
+    left: 0;
+    right: 0;
+  }
+
 }
