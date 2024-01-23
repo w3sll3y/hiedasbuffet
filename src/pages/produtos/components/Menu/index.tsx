@@ -22,10 +22,8 @@ export default function MenuProdutos(props) {
   }
 
   function removerItensRepetidos(arrayOriginal) {
-    // Use o Set para garantir a unicidade dos elementos
     const setUnico = new Set(arrayOriginal);
 
-    // Converta o Set de volta para um array
     const arrayUnico = [...setUnico];
 
     return arrayUnico;
@@ -34,7 +32,6 @@ export default function MenuProdutos(props) {
   async function handlePutCategories() {
     const data = removerItensRepetidos(repeatCategories);
     setCategories(data);
-    console.log('keiekisksaosk ==== ', data)
   }
 
   useEffect(() => {

@@ -5,17 +5,13 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export default function ModalItem(props) {
   const [data, setData] = useState(props?.data);
-  const [modalOpen, setModalOpen] = useState(true);
 
   const notify = () => toast.success("Produto adicionado!");
   const notifyErr = (err) => toast.error(err);
 
   async function handleDataOnAsync(data: any) {
     try {
-      // localStorage.clear()
-      console.log('herre')
       var get = localStorage.getItem('@cart');
-      console.log('get', get)
       if (get === null) {
         await localStorage.setItem('@cart', JSON.stringify([data]));
       }
@@ -25,7 +21,6 @@ export default function ModalItem(props) {
         await localStorage.setItem('@cart', JSON.stringify([...get2, data]));
       }
       await notify();
-      // props.chooseMessage(!modalOpen);
     } catch (error) {
       notifyErr(error)
     }

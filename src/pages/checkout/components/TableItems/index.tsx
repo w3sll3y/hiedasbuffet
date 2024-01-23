@@ -10,8 +10,6 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { useTheme } from '@mui/material/styles';
 import { ToastContainer, toast } from 'react-toastify';
 import { Trash } from 'phosphor-react';
 
@@ -28,8 +26,6 @@ export default function TableItems(props) {
 
   const [open, setOpen] = useState(false);
   const [open2, setOpen2] = useState(false);
-  const theme = useTheme();
-  const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -88,20 +84,15 @@ export default function TableItems(props) {
   };
 
   async function handleRemoveItem(item) {
-    console.log('uteeem', item)
     let newData = data.filter(objeto => objeto?.id !== item?.id);
     await localStorage.setItem('@cart', JSON.stringify(newData));
     await setData(newData);
   }
 
   async function handleSendBudget() {
-    console.log(props)
     const startData = props?.startDate;
-    console.log(startData)
     const endData = props?.endDate;
-    console.log(endData)
     const today = formatarData(new Date());
-    console.log(today)
 
     if (startData < today) {
       return notifyErr('A data de busca deve ser maior que a de hoje');
