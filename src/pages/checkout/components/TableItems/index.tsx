@@ -107,7 +107,7 @@ export default function TableItems(props) {
       `
 
     const mensagemCodificada = encodeURIComponent(dataToSend);
-    const url = `https://web.whatsapp.com/send?phone=558592521919&text=${mensagemCodificada}`;
+    const url = `https://api.whatsapp.com/send?phone=558592521919&text=${mensagemCodificada}`;
     window.open(url, '_blank');
     setOpen2(false)
   }
